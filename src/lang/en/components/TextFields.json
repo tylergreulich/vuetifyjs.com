@@ -93,7 +93,7 @@
     "browserAutocomplete": "Configures the default `<input>` autocomplete attribute",
     "clearIcon": "Applied when using **clearable** and the input is dirty",
     "clearIconCb": "Callback for clear icon when clicked",
-    "counter": "Creates counter for input length; if no Number is specified, it defaults to 25. Does not apply any validation.",
+    "counter": "Creates counter for input length; if no number is specified, it defaults to 25. Does not apply any validation.",
     "flat": "Mixins.Soloable.props.flat",
     "fullWidth": "Desginates input type as full-width",
     "multiLine": "Turns into textarea",
