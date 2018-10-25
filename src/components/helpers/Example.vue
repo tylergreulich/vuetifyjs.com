@@ -77,11 +77,13 @@
           v-divider(v-if="!readonly")
           v-tabs(
             ref="tabs"
+            v-model="tab"
             v-show="!readonly"
           )
             v-tab(
               v-for="tab in tabs"
               :key="tab"
+              :href="`#${tab}`"
               v-show="parsed[tab]"
               active-class=""
               class="body-2"
@@ -91,8 +93,8 @@
             )
               v-tab-item(
                 v-for="tab in tabs"
-                :id="null"
                 :key="tab"
+                :value="tab"
               )
                 helpers-markup(lang="html" v-if="parsed[tab]").ma-0
                   | {{ parsed[tab] }}
@@ -154,10 +156,11 @@
 
     data () {
       return {
+        tab: 'template',
         tabs: ['template', 'script', 'style'],
         component: null,
         invertedProxy: this.inverted,
-        panel: [],
+        panel: null,
         parsed: {
           script: null,
           style: null,
@@ -186,7 +189,7 @@
 
     watch: {
       panel () {
-        this.$nextTick(this.$refs.tabs.callSlider)
+        requestAnimationFrame(this.$refs.tabs.callSlider)
       }
     },
 
@@ -250,9 +253,10 @@
         this.$refs.codepen.submit()
       },
       togglePanel () {
-        const panel = this.$refs.panel.items[0]._uid
-
-        this.$refs.panel.panelClick(panel)
+        this.panel = this.panel === 0 ? null : 0
+        this.$refs.tabs && requestAnimationFrame(() => {
+          this.$refs.tabs.callSlider()
+        })
       }
     }
   }

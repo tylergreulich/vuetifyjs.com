@@ -327,8 +327,12 @@ export default () => ({
           href: 'required-styles'
         },
         {
-          text: 'Guides.ALaCarte.componentNameListHeader',
-          href: 'ui-component-name-list'
+          text: 'Guides.ALaCarte.loaderHeader',
+          href: 'vuetify-loader'
+        },
+        {
+          text: 'Guides.ALaCarte.loaderLimitationsHeader',
+          href: 'loader-limitations'
         }
       ],
       SSR: [
