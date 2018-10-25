@@ -75,7 +75,8 @@
     ],
     "examples": [
       "textDividers",
-      "iconDividers"
+      "iconDividers",
+      "itemSlot"
     ],
     "spec": false
   },
@@ -200,6 +201,7 @@
       "dateColorable",
       "dateDialogAndMenu",
       "dateFormatting",
+      "dateFormattingMomentDatefns",
       "dateAllowedDates",
       { "file": "dateMultiple", "newIn": "1.2" },
       "dateWidth",
